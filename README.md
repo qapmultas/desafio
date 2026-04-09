@@ -21,4 +21,4 @@ Desenvolva este aplicativo já com a solução proposta. Demonstre visivelmente 
 
 Clone este repositório e apresente um pull request de sua solução quando concluir.
 
-É obrigatório desenvolver este aplicativo em **Flutter**.
+É obrigatório desenvolver este aplicativo em **React** ou **React Native**. Caso use uma solução de React pra web, recomendo usar **NextJS** com App Router.
