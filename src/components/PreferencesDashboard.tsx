@@ -102,20 +102,24 @@ export function PreferencesDasboard(){
     }
     const [logs, setLogs] = useState<LogsProps[]>([])
     return(
-        <div>
-            <h1 className="text-4xl p-4 text-center">Desafio QAP Multas</h1>
-            <section className="flex gap-5 w-125 m-auto p-4 justify-center">
+        <div className="flex flex-col gap-4 w-3xl mx-auto">
+            <span className="text-[var(--accent-color)] bg-[var(--bg-soft)] hover:text-[var(--accent-hover)] w-44 text-center p-1 border border-[var(--border-color)] rounded-md mt-15">Desafio QAP multas</span>
+            <h1 className="text-5xl">Preferências do aplicativo</h1>
+            <p className="max-w-2xl text-base leading-7 text-[var(--text-muted)]">
+              Ajuste as opções abaixo. As alterações são agrupadas antes do envio para reduzir requisições sem interromper o uso.
+            </p>
+            <section className="flex gap-2 justify-between">
                 {listCards.map((item) => (<InforCard key={item.title} title={item.title} value={item.value}/>))}
             </section>
-            <section className="flex flex-col gap-5 w-125 m-auto">
+            <section className="flex flex-col gap-5 items-center w-full">
                 {listSwitch.map((item) => (<InputSwitch key={item.id} id={item.id} title={item.title} description={item.description} checked={preferences[item.id]} onchange={(value) => handlepreferences(item.id, value)} />))}
-                <div className="p-2 flex gap-4">
+                <div className="p-2 flex w-full gap-4">
                     <input type="checkbox" name="simulate" id="simulate" checked={preferences.simulate} onChange={(e) => handlepreferences("simulate", e.currentTarget.checked)} />
                     <label htmlFor="simulate">Simular erro na próxima requisição</label>
                 </div>
             </section>
-            <section className="flex flex-col gap-3 border rounded-lg p-3 w-fit mx-auto">
-                <h2>Logs</h2>
+            <section className="flex flex-col gap-3 border border-[var(--border-color)] rounded-md p-3 w-full bg-[var(--bg-card)]">
+                <h2 className="font-bold text-2xl">Logs</h2>
                 {logs.map((item) => (<LogsCard key={item.id} id={item.id} statusCode={item.statusCode} status={item.status} message={item.message}/>))}
             </section>
         </div>
