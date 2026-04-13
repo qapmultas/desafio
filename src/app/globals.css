@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #f6f7f9;
+  --bg-card: #ffffff;
+  --bg-soft: #eef7f4;
+  --text-color: #202124;
+  --text-muted: #5f6368;
+  --border-color: #dfe3e8;
+  --accent-color: #0f766e;
+  --accent-hover: #0b5f59;
+  --success-color: #15803d;
+  --success-bg: #ecfdf3;
+  --error-color: #b91c1c;
+  --error-bg: #fef2f2;
+  --shadow: 0 12px 30px rgba(32, 33, 36, 0.08);
+  --shadow-hover: 0 18px 42px rgba(32, 33, 36, 0.12);
+  --switch-bg: #cfd8dc;
+  --switch-active: #0f766e;
+  --knob-shadow: 0 2px 6px rgba(32, 33, 36, 0.25);
+}
+
+body.dark {
+  --bg-color: #141414;
+  --bg-card: #202124;
+  --bg-soft: #1d2f2c;
+  --text-color: #f1f3f4;
+  --text-muted: #bdc1c6;
+  --border-color: #3c4043;
+  --accent-color: #2dd4bf;
+  --accent-hover: #5eead4;
+  --success-color: #4ade80;
+  --success-bg: #143322;
+  --error-color: #f87171;
+  --error-bg: #3a1a1a;
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.45);
+  --switch-bg: #5f6368;
+  --switch-active: #2dd4bf;
+  --knob-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
