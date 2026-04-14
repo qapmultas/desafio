@@ -22,3 +22,15 @@ Desenvolva este aplicativo já com a solução proposta. Demonstre visivelmente 
 Clone este repositório e apresente um pull request de sua solução quando concluir.
 
 É obrigatório desenvolver este aplicativo em **React** ou **React Native**. Caso use uma solução de React pra web, recomendo usar **NextJS** com App Router.
+
+---
+
+## Resolução
+
+**Stack:** Next.js (App Router) + React + TypeScript + Tailwind CSS.
+
+**Solução:** Debounce de 1200ms via `setTimeout`/`clearTimeout` com `useRef`. Cada clique nos 3 switches dispara `scheduleSave()`, que cancela o timer anterior e cria um novo — consolidando múltiplos cliques rápidos em **uma única requisição POST** após 1,2s de inatividade. O `preferencesRef` evita stale closures.
+
+**Contabilização:** 4 cards exibem clicks, requests enviadas, requests bloqueadas (absorvidas pelo debounce) e falhas. Logs detalhados com status code e mensagem são listados abaixo.
+
+**Tratamento de erros:** API route retorna 400 (simulado via checkbox), 500 (exceção). O serviço captura erros de rede e HTTP, retornando `{success: false}` que incrementa o contador de falhas e gera log visual em vermelho.
